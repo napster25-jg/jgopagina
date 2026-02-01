@@ -1,0 +1,1667 @@
+/* =========================================================
+   VARIABLES GLOBALES (ROOT)
+   ========================================================= */
+:root {
+  --primary: #d4af37;
+  --primary-dark: #b28f20;
+  --bg: #050505;
+  --card: #111111;
+  --text: #f5f5f5;
+  --muted: #a0a0a0;
+  --border: #2b2b2b;
+  --accent: #f0c75e;
+  --radius-lg: 18px;
+  --shadow-soft: 0 18px 35px rgba(0, 0, 0, 0.7);
+}
+
+/* =========================================================
+   RESET BÁSICO / BASE
+   ========================================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  background: radial-gradient(circle at top, #2b2210, #050505 55%);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* =========================================================
+   CONTENEDOR GLOBAL / LAYOUT
+   ========================================================= */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+section {
+  margin-bottom: 1.4rem;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 1.5rem;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.18);
+}
+
+/* ---------- Logo ---------- */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.logo-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  background:
+    radial-gradient(circle at 30% 20%, #ffffffaa, #d4af37 35%, transparent 55%),
+    radial-gradient(circle at 75% 80%, #7d6117, #2b210a 65%, #050505 95%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.85),
+              0 0 18px rgba(240,199,94,0.55);
+  border: 1px solid rgba(240,199,94,0.6);
+  overflow: hidden;
+}
+
+.logo-initial-main {
+  font-weight: 800;
+  font-size: 1.25rem;
+  color: #050505;
+  letter-spacing: 0.03em;
+}
+
+.logo-initial-sub {
+  position: absolute;
+  bottom: 4px;
+  right: 6px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #fdf5d2;
+  text-shadow: 0 0 6px rgba(0,0,0,0.7);
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
+}
+
+.logo-sub {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+/* =========================================================
+   HEADER – ACCIONES / IDIOMA
+   ========================================================= */
+.header-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.lang-switch {
+  display: flex;
+  gap: 0.3rem;
+  margin-right: 0.4rem;
+}
+
+.btn-lang {
+  border-radius: 999px;
+  border: 1px solid rgba(212, 175, 55, 0.5);
+  background: transparent;
+  padding: 0.2rem 0.6rem;
+  font-size: 0.7rem;
+  cursor: pointer;
+  color: var(--muted);
+  transition:
+    background 0.15s ease,
+    color 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.1s ease;
+}
+
+.btn-lang:hover {
+  transform: translateY(-1px);
+  border-color: rgba(240,199,94,0.85);
+}
+
+.btn-lang.active {
+  background: linear-gradient(135deg, #d4af37, #f0c75e);
+  color: #050505;
+  border-color: transparent;
+  font-weight: 600;
+}
+
+/* =========================================================
+   BOTONES GENERALES
+   ========================================================= */
+.btn {
+  border: none;
+  border-radius: 999px;
+  padding: 0.55rem 1.2rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition:
+    transform 0.1s ease,
+    box-shadow 0.1s ease,
+    background 0.1s ease,
+    border-color 0.1s ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #d4af37, #f0c75e);
+  color: #050505;
+  font-weight: 600;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.8);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, #f0c75e, #d4af37);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  padding: 0.55rem 1.4rem;
+  font-size: 0.88rem;
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  border-radius: 999px;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: #050505;
+  transform: translateY(-1px);
+}
+
+/* =========================================================
+   SECCIONES – TÍTULOS GENERALES
+   ========================================================= */
+.section-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+.section-subtitle {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  max-width: 620px;
+}
+
+/* =========================================================
+   HERO LANDING – PORTADA
+   ========================================================= */
+.hero-landing {
+  position: relative;
+  width: 100%;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: url("Imagenes/daianafull.jpeg") center/cover no-repeat;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-soft);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.65),
+    rgba(0,0,0,0.35)
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* =========================================================
+   CARDS & GRID – SERVICIOS
+   ========================================================= */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.4rem;
+}
+
+/* ---------- Card base ---------- */
+.card {
+  background: linear-gradient(145deg, #0b0b0b, #171717);
+  border-radius: 20px;
+  padding: 0.9rem;
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  font-size: 0.85rem;
+  position: relative;
+  overflow: hidden;
+  transform: translateY(0);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease;
+  will-change: transform;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top, rgba(212, 175, 55, 0.12), transparent 55%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 45px rgba(0, 0, 0, 0.95);
+  border-color: rgba(240, 199, 94, 0.7);
+}
+
+.card:hover::before {
+  opacity: 1;
+}
+
+/* =========================================================
+   CARD SERVICIO CON IMAGEN
+   ========================================================= */
+.service-with-image {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-image {
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+  position: relative;
+}
+
+.service-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transform: scale(1);
+  transition: transform 0.4s ease;
+  will-change: transform;
+}
+
+.service-with-image:hover .service-image img {
+  transform: scale(1.06);
+}
+
+.service-info {
+  padding: 0.9rem 1rem 1rem;
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem; /* 👈 aire general */
+}
+
+
+/* ---------- Textos card ---------- */
+.card-title {
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  font-size: 0.98rem;
+}
+
+.card-title::after {
+  content: "";
+  display: block;
+  width: 34px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+  margin-top: 0.25rem;
+}
+
+.card-tag {
+  font-size: 0.72rem;
+  color: var(--muted);
+  margin: 0.55rem 0 0.5rem;
+}
+
+.small {
+  font-size: 0.78rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.price {
+  margin-top: 0.8rem;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* =========================================================
+   SOBRE MÍ
+   ========================================================= */
+.about-card {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.about-image {
+  width: 100%;
+  height: 180px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.about-text h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.about-text .small {
+  margin-top: 0.4rem;
+}
+
+/* =========================================================
+   FORMULARIO – AGENDAR CITA
+   ========================================================= */
+.booking-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr);
+  gap: 1.1rem;
+  align-items: flex-start;
+}
+
+label {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin-bottom: 0.2rem;
+  display: inline-block;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 0.48rem 0.7rem;
+  border-radius: 999px;
+  border: 1px solid #333333;
+  font-size: 0.85rem;
+  outline: none;
+  background: #050505;
+  color: var(--text);
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #777777;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px rgba(212,175,55,0.6);
+}
+
+textarea {
+  min-height: 70px;
+  border-radius: 12px;
+  resize: vertical;
+}
+
+.btn-full {
+  width: 100%;
+  margin-top: 0.4rem;
+}
+
+/* =========================================================
+   FORMULARIO – UX / PLACEHOLDER / ESPACIADO (OVERRIDES)
+   ========================================================= */
+.form-group {
+  margin-bottom: 1rem;
+}
+
+input,
+select,
+textarea {
+  padding: 0.65rem 0.9rem;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background-color 0.25s ease;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+  opacity: 0.75;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  background-color: #070707;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.18);
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+  opacity: 0.35;
+  transform: translateY(-2px);
+}
+
+input:hover,
+select:hover,
+textarea:hover {
+  border-color: rgba(212,175,55,0.55);
+}
+
+textarea {
+  min-height: 90px;
+  line-height: 1.45;
+}
+
+.btn-full {
+  margin-top: 0.8rem;
+}
+
+/* =========================================================
+   FIX DEFINITIVO – FORMULARIO BLOQUEADO
+   ========================================================= */
+#booking-form {
+  position: relative;
+  z-index: 9999;
+  pointer-events: auto;
+}
+
+#booking-form input,
+#booking-form select,
+#booking-form textarea,
+#booking-form button {
+  pointer-events: auto;
+}
+
+.hero-overlay,
+.card::before,
+.modal:not(.active) {
+  pointer-events: none;
+}
+
+section,
+.section-header {
+  position: relative;
+  z-index: 1;
+}
+
+/* =========================================================
+   CHECKBOX PRO – FORMULARIO
+   ========================================================= */
+.form-check {
+  margin-top: 1.3rem;
+}
+
+.check-pro {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.check-pro input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.check-box {
+  width: 18px;
+  height: 18px;
+  border-radius: 5px;
+  border: 1px solid rgba(212,175,55,0.6);
+  background: linear-gradient(145deg, #0b0b0b, #151515);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,0.6);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  transition: all 0.2s ease;
+}
+
+.check-text {
+  font-size: 0.75rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.check-pro:hover .check-box {
+  border-color: var(--accent);
+}
+
+.check-pro input:checked + .check-box {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  box-shadow: 0 0 0 2px rgba(212,175,55,0.35);
+}
+
+.check-pro input:checked + .check-box::after {
+  content: "✓";
+  display: block;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #050505;
+  line-height: 18px;
+}
+
+.check-pro input:checked ~ .check-text {
+  color: var(--text);
+}
+
+.check-pro input:focus-visible + .check-box {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+/* =========================================================
+   BADGES / ETIQUETAS
+   ========================================================= */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-top: 0.5rem;
+}
+
+.badge {
+  font-size: 0.65rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  background: rgba(212, 175, 55, 0.15);
+  color: var(--accent);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+}
+
+/* =========================================================
+   VER MÁS / VER MENOS
+   ========================================================= */
+.more-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease;
+}
+
+.more-content.active {
+  max-height: 800px;
+}
+
+.toggle-more {
+  margin-top: 0.4rem;
+  font-size: 0.7rem;
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+/* =========================================================
+   MODAL
+   ========================================================= */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content {
+  background: linear-gradient(145deg, #0b0b0b, #151515);
+  border-radius: 22px;
+  padding: 1.2rem;
+  width: min(92%, 420px);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  box-shadow: 0 35px 80px rgba(0, 0, 0, 0.95);
+  position: relative;
+  transform: translateY(10px);
+  transition: transform 0.25s ease;
+  will-change: transform, opacity;
+}
+
+.modal.active .modal-content {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: none;
+  border: none;
+  font-size: 1.1rem;
+  color: var(--muted);
+  cursor: pointer;
+}
+
+/* =========================================================
+   FOOTER – PREMIUM
+   ========================================================= */
+.footer-pro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.7rem;
+  padding: 1.8rem 1.4rem;
+  border-top: 1px solid var(--border);
+  text-align: center;
+}
+
+.footer-brand {
+  font-size: 0.95rem;
+  color: var(--text);
+  letter-spacing: 0.05em;
+}
+
+.footer-location {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.45rem;
+  text-decoration: none;
+  color: var(--muted);
+  transition: transform 0.25s ease, color 0.25s ease;
+}
+
+.footer-address {
+  font-size: 0.9rem;
+}
+
+.footer-country {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.canada-leaf {
+  width: 18px;
+  height: 18px;
+  fill: var(--accent);
+  transition: transform 0.35s ease;
+}
+
+.footer-location:hover {
+  color: var(--text);
+  transform: translateY(-2px);
+}
+
+.footer-location:hover .canada-leaf {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+/* =========================================================
+   REDES SOCIALES – BOTONES PRO
+   ========================================================= */
+.social-links-pro {
+  display: flex;
+  justify-content: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.social-pro {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;   /* 👈 centra icono + texto */
+  gap: 0.55rem;
+  padding: 0.55rem 1.4rem;   /* 👈 un poco más de aire */
+  min-width: 210px;          /* 👈 clave para igualar botones */
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  border-radius: 999px;
+  text-decoration: none;
+  color: var(--text);
+  background: linear-gradient(145deg, #0b0b0b, #151515);
+  border: 1px solid rgba(212,175,55,0.45);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.85);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease,
+    border-color 0.18s ease,
+    color 0.18s ease;
+}
+
+
+.social-pro:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px rgba(0,0,0,0.95);
+  border-color: var(--accent);
+}
+
+.social-icon-pro {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at top, var(--accent), var(--primary));
+  color: #050505;
+}
+
+.social-icon-pro svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+}
+
+.social-pro.facebook:hover { color: #1877f2; }
+.social-pro.whatsapp:hover { color: #25d366; }
+.social-pro.instagram:hover span:not(.social-icon-pro) {
+  color: #DD2A7B; /* magenta Instagram */
+}
+
+
+
+/* =========================================================
+   ANIMACIÓN CAMBIO DE IDIOMA
+   ========================================================= */
+.i18n-animate {
+  animation: i18nFade 0.35s ease;
+}
+
+@keyframes i18nFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* =========================================================
+   PRELOADER
+   ========================================================= */
+#preloader {
+  position: fixed;
+  inset: 0;
+  background: #050505;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  color: #fff;
+}
+
+#preloader-logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1px solid rgba(212,175,55,.7);
+  overflow: hidden;
+  animation: spinLogo 2.8s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#preloader-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+#preloader-percent {
+  margin-top: 1rem;
+  letter-spacing: .15em;
+}
+
+@keyframes spinLogo {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+@media (max-width: 900px) {
+  .about-card {
+    grid-template-columns: 1fr;
+  }
+
+  .about-image {
+    height: 200px;
+  }
+}
+@media (max-width: 768px) {
+  .social-section {
+    margin-top: 1.6rem;
+    padding-top: 1.2rem;
+    padding-bottom: 2rem;
+  }
+}
+@media (max-width: 600px) {
+  .services-grid {
+    gap: 1rem;
+  }
+
+  .service-image {
+    height: 170px;
+  }
+
+  .card {
+    padding: 0.8rem;
+  }
+
+  .modal-content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #preloader-logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .footer-brand,
+  .footer-address {
+    font-size: 0.85rem;
+  }
+}
+
+/* =========================================================
+   OVERRIDES FINALES / UTILIDADES
+   ========================================================= */
+.service-full[hidden] {
+  display: none;
+}
+/* ===========================
+   MÁS ESPACIO ENTRE TÍTULO Y CONTENIDO
+=========================== */
+
+/* Contenedor del título */
+.section-header {
+  margin-bottom: 1.6rem;
+}
+
+/* Título principal */
+.section-header h2 {
+  margin-bottom: 1.2rem;
+}
+
+/* Subtítulo */
+.section-header p {
+  margin-bottom: 0;
+}
+
+/* Primer elemento después del título */
+.section-header + * {
+  margin-top: 0;
+}
+
+/* ===========================
+   REDES SOCIALES – ESPACIADO CORREGIDO
+=========================== */
+
+.social-section {
+  margin-top: 2.2rem;       /* 👈 antes era enorme */
+  padding-top: 1.6rem;
+  padding-bottom: 2.4rem;
+  text-align: center;
+}
+
+/* Badge */
+.social-section .badge-outline {
+  display: inline-block;
+  margin-bottom: 0.9rem;
+  letter-spacing: 0.16em;
+}
+
+/* Título */
+.social-section .social-title {
+  max-width: 700px;
+  margin: 0 auto 1.8rem;
+  line-height: 1.35;
+}
+
+/* Botones */
+.social-links-pro {
+  margin-top: 1.4rem;
+  gap: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .social-section {
+    margin-top: 1.8rem;
+    padding-top: 1.2rem;
+    padding-bottom: 2rem;
+  }
+
+  .social-section .social-title {
+    margin-bottom: 1.4rem;
+  }
+}
+.section-divider + .social-section {
+  margin-top: 1.4rem;
+}
+
+
+/* ===========================
+   ACCESIBILIDAD – FOCUS VISIBLE
+=========================== */
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Focus accesible para botones sociales */
+.social-pro:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px rgba(212,175,55,0.8),
+    0 18px 38px rgba(0,0,0,0.95);
+}
+/* ===========================
+   SEPARADOR DE SECCIONES – ANIMADO
+=========================== */
+
+.section-divider {
+  width: 100%;
+  margin: 2rem 0;
+  opacity: 0;
+}
+
+/* Línea dorada */
+.section-divider::before {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(212,175,55,0.9),
+    transparent
+  );
+  box-shadow: 0 0 18px rgba(212,175,55,0.45);
+
+  /* Animación REAL */
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.9s ease;
+}
+
+/* Visible al hacer scroll */
+.section-divider.is-visible {
+  opacity: 1;
+}
+
+.section-divider.is-visible::before {
+  transform: scaleX(1);
+}
+.section-divider {
+  transform: translateY(14px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.section-divider.is-visible {
+  transform: translateY(0);
+}
+/* ===========================
+   HERO – STAGGER ANIMATION PRO
+=========================== */
+
+/* Estado inicial */
+.hero-title,
+.hero-subtitle,
+.hero-buttons {
+  opacity: 0;
+  transform: translateY(12px);
+  animation: heroItem 0.6s ease forwards;
+}
+
+/* Delay escalonado */
+.hero-title {
+  animation-delay: 0.1s;
+}
+
+.hero-subtitle {
+  animation-delay: 0.25s;
+}
+
+.hero-buttons {
+  animation-delay: 0.4s;
+}
+
+/* Animación base */
+@keyframes heroItem {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===========================
+   FIX DEFINITIVO HERO
+=========================== */
+
+.hero-content {
+  animation: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Estado seguro por defecto */
+.hero-title,
+.hero-subtitle,
+.hero-buttons {
+  opacity: 0;
+  transform: translateY(0);
+}
+
+/* Animación SOLO dentro del hero */
+.hero-landing .hero-title,
+.hero-landing .hero-subtitle,
+.hero-landing .hero-buttons {
+  opacity: 0;
+  transform: translateY(70px);
+  animation: heroItem 3.0s ease forwards;
+}
+
+.hero-landing .hero-title {
+  animation-delay: 0.1s;
+}
+
+.hero-landing .hero-subtitle {
+  animation-delay: 0.25s;
+}
+
+.hero-landing .hero-buttons {
+  animation-delay: 0.4s;
+}
+/* ===========================
+   HERO – MEJORA DE CONTRASTE TEXTO
+=========================== */
+
+.hero-title,
+.hero-subtitle {
+  color: #ffffff;
+  font-weight: 700;
+  text-shadow:
+    0 6px 18px rgba(0,0,0,0.9);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 1.2rem 1.6rem;
+  backdrop-filter: blur(1.5px);
+}
+
+.hero-buttons .btn {
+  box-shadow:
+    0 10px 22px rgba(0,0,0,0.85);
+}
+/* ===========================
+   ABOUT TABS – PREMIUM
+=========================== */
+
+.about-tabs {
+  margin-top: 1.5rem;
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.tab-btn {
+  background: transparent;
+  border: 1px solid rgba(212,175,55,0.4);
+  color: var(--muted);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tab-btn.active,
+.tab-btn:hover {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #050505;
+  border-color: transparent;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+/* ===========================
+   ABOUT – TABS PRO
+=========================== */
+
+.tab-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.tab-btn {
+  background: linear-gradient(145deg, #0b0b0b, #151515);
+  border: 1px solid rgba(212,175,55,0.45);
+  color: var(--text);
+  padding: 0.4rem 0.9rem;
+  font-size: 0.7rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.tab-btn:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent);
+}
+
+.tab-btn.active {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #050505;
+  font-weight: 600;
+}
+
+/* CONTENIDO */
+.tab-content {
+  display: none;
+  animation: tabFade 0.5s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes tabFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.tab-btn.active .tab-icon {
+  transform: scale(1.15) rotate(-4deg);
+  transition: transform 0.3s ease;
+}
+/* ===========================
+   FIX: eliminar línea blanca del footer
+=========================== */
+.footer-pro {
+  border-top: none !important;
+}
+/* ===========================
+   FIX ICONO INSTAGRAM – DORADO CONSISTENTE
+=========================== */
+
+.social-pro.instagram:hover {
+  color: var(--text); /* no cambia el texto */
+}
+
+.social-pro.instagram:hover .social-icon-pro {
+  transform: scale(1.08);
+}
+/* ===========================
+   CATALOGO – PRICE LIST PRO
+=========================== */
+
+.catalog-category {
+  margin-bottom: 0.7rem;
+}
+
+.category-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+  position: relative;
+}
+
+.category-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  margin-top: 0.4rem;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.price-list {
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.price-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.82rem;
+  padding: 0.35rem 0;
+  border-bottom: 1px dashed rgba(212,175,55,0.25);
+}
+
+.price-list li:last-child {
+  border-bottom: none;
+}
+
+.price-list span:first-child {
+  color: var(--text);
+}
+
+.price-list .price {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.price-list.two-columns {
+  grid-template-columns: 1fr 1fr;
+  column-gap: 2rem;
+}
+
+.highlight-item {
+  margin-top: 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid rgba(212,175,55,0.4);
+}
+
+@media (max-width: 600px) {
+  .price-list.two-columns {
+    grid-template-columns: 1fr;
+  }
+}
+.service-full {
+  margin-top: 0.9rem;
+  animation: fadeExpand 0.35s ease;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+
+@keyframes fadeExpand {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ===========================
+   MOBILE FIRST – RITMO GLOBAL
+=========================== */
+@media (max-width: 768px) {
+  section {
+    margin-bottom: 1rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+}
+/* ===========================
+   HERO – MOBILE FIRST
+=========================== */
+@media (max-width: 768px) {
+  .hero-landing {
+    height: 68vh;              /* antes 85vh */
+    margin-bottom: 1.6rem;
+    border-radius: 14px;
+  }
+
+  .hero-content {
+    padding: 1rem;
+  }
+
+  .hero-title {
+    font-size: 1.35rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+  }
+
+  .hero-buttons {
+    margin-top: 1rem;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+  }
+}
+/* ===========================
+   SERVICES CARDS – MOBILE FIRST
+=========================== */
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+  }
+
+  .service-image {
+    height: 145px;
+  }
+
+  .card {
+    border-radius: 18px;
+  }
+
+  .card-title {
+    font-size: 0.95rem;
+  }
+
+  .small {
+    font-size: 0.75rem;
+  }
+
+  .price {
+    font-size: 0.85rem;
+    margin-top: 0.6rem;
+  }
+
+  .btn-more {
+    margin-top: 0.6rem;
+  }
+}
+/* ===========================
+   ABOUT – MOBILE FIRST
+=========================== */
+@media (max-width: 768px) {
+  .about-card {
+    gap: 0.8rem;
+  }
+
+  .about-image {
+    height: 170px;
+  }
+
+  .about-text h3 {
+    font-size: 0.95rem;
+  }
+}
+/* ===========================
+   SECTION DIVIDER – MOBILE
+=========================== */
+@media (max-width: 768px) {
+  .section-divider {
+    margin: 1.4rem 0;
+  }
+}
+/* ===========================
+   SOCIAL – MOBILE FIRST
+=========================== */
+@media (max-width: 768px) {
+  .social-section {
+    margin-top: 1.6rem;
+    padding-top: 1.2rem;
+    padding-bottom: 1.8rem;
+  }
+
+  .social-links-pro {
+    gap: 0.9rem;
+  }
+
+  .social-pro {
+    min-width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .hero-landing {
+    height: 65vh;
+    margin-bottom: 1.2rem;
+    border-radius: 14px;
+  }
+}
+.service-info strong {
+  display: block;
+  margin-top: 0.8rem;
+  margin-bottom: 0.15rem;
+  color: var(--text);
+  font-weight: 600;
+}
+.service-info p {
+  margin: 0;
+  line-height: 1.55;
+}
+.service-info ul {
+  margin: 0.4rem 0 0.9rem;
+  padding-left: 0;
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.service-info li {
+  line-height: 1.5;
+}
+.info-block {
+  padding: 0.8rem 1rem;
+  border-left: 3px solid var(--primary);
+  background: rgba(212, 175, 55, 0.06);
+  border-radius: 10px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.info-block strong {
+  font-weight: 600;
+}
+/* =========================================================
+   FIX DEFINITIVO SQUARE – NO TOCAR
+   ========================================================= */
+
+/* El formulario NO debe heredar animaciones de .card */
+#booking-form {
+  overflow: visible !important;
+  transform: none !important;
+  will-change: auto !important;
+}
+
+/* Asegurar que Square pueda renderizar su iframe */
+#card-container {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  min-height: 140px;
+  margin: 1rem 0;
+  padding: 12px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+/* El iframe de Square */
+#card-container iframe {
+  width: 100% !important;
+  min-height: 120px !important;
+  border: none !important;
+}
+
+/* Prevención total contra bloqueo por animaciones */
+#booking-form * {
+  transform: none !important;
+  will-change: auto !important;
+}
+/* ===========================
+   SQUARE – LIBERAR IFRAMES
+=========================== */
+.card-no-anim {
+  overflow: visible !important;
+  transform: none !important;
+  will-change: auto !important;
+}
+
+.card-no-anim::before {
+  display: none !important;
+}
+/* ================================
+   PAY BUTTON STATES
+================================ */
+
+#pay-btn {
+  background: transparent;
+  border: 1px solid #d4af37;
+  color: #d4af37;
+  transition: all 0.3s ease;
+}
+
+/* 🔒 Disabled state */
+#pay-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  filter: grayscale(1);
+}
+
+/* ✅ Enabled (after availability check) */
+#pay-btn:not(:disabled) {
+  background: linear-gradient(135deg, #d4af37, #f1c94a);
+  color: #000;
+  border: none;
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.35);
+}
+
+/* Hover only when enabled */
+#pay-btn:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.45);
+}
+/* ================================
+   PAY BUTTON – FINAL FIX
+================================ */
+
+#pay-btn {
+  width: 100%;
+  height: 56px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  transition: all 0.3s ease;
+}
+
+/* Disabled – visible but inactive */
+#pay-btn:disabled {
+  background: transparent;
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: rgba(212, 175, 55, 0.35);
+  cursor: not-allowed;
+}
+
+/* Enabled – GOLD */
+#pay-btn:not(:disabled) {
+  background: linear-gradient(135deg, #d4af37, #f1c94a);
+  border: none;
+  color: #000;
+  box-shadow: 0 8px 24px rgba(212, 175, 55, 0.35);
+}
+
+/* Hover only when enabled */
+#pay-btn:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(212, 175, 55, 0.45);
+}

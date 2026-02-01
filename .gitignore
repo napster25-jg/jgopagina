@@ -1,0 +1,25 @@
+# Node
+node_modules
+npm-debug.log
+yarn.lock
+
+# Env
+.env
+.env.*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Netlify
+.netlify
+
+# Build
+dist
+build
+
+# Backend secrets
+jgoservices-backend/.env
+jgoservices-backend/*.pem
+jgoservices-backend/*.pfx
+
