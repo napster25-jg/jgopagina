@@ -9,9 +9,11 @@ const supabase = createClient(
 
 const squareClient = new SquareClient({
   token: process.env.SQUARE_ACCESS_TOKEN,
-  environment: SquareEnvironment.Sandbox,
+  environment:
+    process.env.SQUARE_ENV === "production"
+      ? SquareEnvironment.Production
+      : SquareEnvironment.Sandbox,
 });
-
 
 exports.handler = async (event) => {
   if (event.httpMethod !== "POST") {
