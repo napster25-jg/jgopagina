@@ -21,6 +21,7 @@
   "dependencies": {
     "@supabase/supabase-js": "^2.93.3",
     "luxon": "^3.7.2",
+    "resend": "^6.9.2",
     "square": "^44.0.0"
   }
 }
