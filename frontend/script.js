@@ -2,15 +2,13 @@
    SCRIPT GLOBAL – DAIANA SERVICES
    ESTABLE · SEGURO · MULTIIDIOMA
 ========================================================= */
+let currentAppointmentId = null;
 
 document.addEventListener("DOMContentLoaded", () => {
 
   let translations;
   let currentLang = "es";
-  let currentAppointmentId = null;
-
-
-
+  
   /* =========================================================
      1️⃣ PRELOADER – SE ELIMINA SIEMPRE
   ========================================================= */
@@ -1393,7 +1391,9 @@ if (form && messageBox) {
     };
 
     try {
-  const res = await fetch("http://localhost:3001/api/create-appointment", {
+      
+ const res = await fetch("/.netlify/functions/create-appointment", {
+
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
@@ -1470,15 +1470,14 @@ async function initSquareSafe() {
       const result = await card.tokenize();
 
       if (result.status === "OK") {
-        const response = await fetch("http://localhost:3001/process-payment", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
+      const response = await fetch("/.netlify/functions/process-payment", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
         sourceId: result.token,
-        appointmentId: currentAppointmentId
-})
-
-        });
+      appointmentId: currentAppointmentId
+    })
+  });
 
         const data = await response.json();
 

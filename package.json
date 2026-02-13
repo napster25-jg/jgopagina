@@ -19,6 +19,8 @@
   },
   "homepage": "https://github.com/napster25-jg/jgopagina#readme",
   "dependencies": {
-    "@supabase/supabase-js": "^2.93.3"
+    "@supabase/supabase-js": "^2.93.3",
+    "luxon": "^3.7.2",
+    "square": "^44.0.0"
   }
 }
