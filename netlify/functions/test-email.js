@@ -6,7 +6,7 @@ exports.handler = async () => {
   try {
     await resend.emails.send({
       from: "JGo Brows <onboarding@resend.dev>",
-      to: "jgobrows1@outlook.com",
+      to: "latinojhon2589@gmail.com",
       subject: "Test Email ✅",
       html: `
         <h2>Email Test Successful 🎉</h2>
