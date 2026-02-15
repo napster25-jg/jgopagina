@@ -94,34 +94,33 @@ const payment = paymentResponse.payment;
               console.warn("Appointment has no email");
             } else {
               await resend.emails.send({
-                from: "JGo Brows <onboarding@resend.dev>",
-                to: appointment.email,
-                subject: "Your Appointment Confirmation 💖",
-                html: `
-                  <h2>Hello ${appointment.full_name},</h2>
-                  <p>Your appointment for <strong>${appointment.service}</strong> has been successfully confirmed.</p>
-                  <p>Your payment was processed successfully.</p>
-                  <p>Thank you for choosing JGo Brows 💕</p>
-                `,
-              });
-}
+              from: "JGo Brows <info@jgobrows.ca>",
+              to: appointment.email,
+              subject: "Your Appointment Confirmation 💖",
+              html: `
+                <h2>Hello ${appointment.full_name},</h2>
+                <p>Your appointment for <strong>${appointment.service}</strong> has been successfully confirmed.</p>
+                <p>Your payment was processed successfully.</p>
+                <p>Thank you for choosing JGo Brows 💕</p>
+              `,
+            });
+
+            }
 
 
 
                   // Enviar email para ti
-                  await resend.emails.send({
-            from: "JGo Brows <onboarding@resend.dev>",
-            to: "jgobrows1@outlook.com",
-            subject: "New Paid Appointment 💰",
-            html: `
-              <h2>New Paid Appointment</h2>
-              <p>Client: ${appointment.full_name}</p>
-              <p>Email: ${appointment.email}</p>
-              <p>Service: ${appointment.service}</p>
-  `,
-});
-
-
+                 await resend.emails.send({
+                  from: "JGo Brows <info@jgobrows.ca>",
+                  to: "jgobrows1@outlook.com",
+                  subject: "New Paid Appointment 💰",
+                  html: `
+                    <h2>New Paid Appointment</h2>
+                    <p>Client: ${appointment.full_name}</p>
+                    <p>Email: ${appointment.email}</p>
+                    <p>Service: ${appointment.service}</p>
+                  `,
+                });
 
                   return {
                   statusCode: 200,
